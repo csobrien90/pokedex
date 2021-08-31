@@ -1,19 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 #nav {
   display: flex;
   justify-content: space-around;
 }
 
-.card {
-  border: 1px solid black;
-  border-radius: 5px;
-  height: 20vw;
-  width: 20vw;
-  text-align: center;
+#gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: lightgrey;
   padding: 20px;
 }
 
-#gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 3vw;
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  flex: 1;
+  flex-basis: 250px;
+  background-color: lightgreen;
 }
