@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react"; //Allows us to set and reset attributes in data
+import Home from "./components/Home";
 
 function App() {
+  const [offset, setOffset] = useState(null);
+
+  function next() {
+    if (offset) {
+      let nextBatch = offset + 20;
+      setOffset(nextBatch);
+    } else {
+      setOffset(20);
+    }
+  }
+
+  function prev() {
+    if (offset) {
+      let nextBatch = offset - 20;
+      setOffset(nextBatch);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello Pokemon Trainers!</h1>
+      <div id="nav">
+        {offset && <button onClick={prev}>Previous</button>}
+        <button onClick={next}>Next</button>
+      </div>
+      <Home offset={offset} />
     </div>
   );
 }
