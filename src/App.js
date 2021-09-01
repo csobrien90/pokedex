@@ -24,6 +24,8 @@ function App() {
   return (
     <div>
       <h1>Hello Pokemon Trainers!</h1>
+      <p>Use the Next and Prev button to step through the pokemon. I may not know many beyond the original 151 (including Mew of 
+        course), but they're all there!</p>
       <div id="nav">
         {offset && <button onClick={prev}>Previous</button>}
         <button onClick={next}>Next</button>
